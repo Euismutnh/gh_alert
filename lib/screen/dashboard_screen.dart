@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:gh_cas/screen/notifications_screen.dart';
-import 'package:gh_cas/widgets/map_widget.dart';
+import '../screen/notifications_screen.dart';
+import '../widgets/map_widget.dart';
 
 import '../widgets/chart_batang.dart';
 
