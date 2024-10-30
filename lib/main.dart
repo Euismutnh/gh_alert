@@ -1,8 +1,17 @@
+//import 'package:cobaan/screen/dashboard_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'screen/splash_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        //ChangeNotifierProvider(create: (_) => DashboardScreen()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,27 +24,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Color(0xFF2D2F39),
         scaffoldBackgroundColor: Color(0xFF2D2F39),
-        accentColor: Colors.white,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.white),
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.white),
-          bodyText2: TextStyle(color: Colors.white),
+          bodyLarge: TextStyle(color: Colors.white),
+          bodyMedium: TextStyle(color: Colors.white),
         ),
         iconTheme: IconThemeData(color: Colors.white),
         appBarTheme: AppBarTheme(
           color: Color(0xFF2D2F39),
           iconTheme: IconThemeData(color: Colors.white),
-          textTheme: TextTheme(
-            headline6: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
-            primary: Color(0xFF009966), // Tombol biru BPJS
-          ),
         ),
       ),
       home: SplashScreen(),
